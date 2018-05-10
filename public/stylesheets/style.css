@@ -1,0 +1,39 @@
+a {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #00B7FF;
+}
+h1{
+  Color: rgb(18, 18, 129);
+}
+html, body {
+  height: 100%;
+  width: 100%;
+  padding:0px !important;
+  margin:0px !important;
+}
+#container {
+  height: 420px;
+  width: 100%;
+  padding:0px !important;
+  margin:0px !important;
+}
+#map {
+  height: 400px;
+  width: 100%;
+  border:1px solid grey;
+  border-radius: 25px;
+  padding: 10px;
+  margin:0px !important;
+  position: absolute;
+}
+.graph{
+  position: inline;
+  height: 450px;
+  width: 100%;
+  background:rgba(255, 255, 255, 0.7);;
+  border:1px solid grey;
+  border-radius: 25px;
+  padding: 10px;
+  z-index: 99;
+}
+
