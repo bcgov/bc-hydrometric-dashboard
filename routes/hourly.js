@@ -7,7 +7,7 @@ var router = express.Router();
 /* GET station info */
 // station, format, stats_type
 router.get('/', function(req, res, next) {
-  //http://localhost:3000/daily?station=08NH005&format=json
+  //http://localhost:3000/hourly?station=08NH005&format=json
   var station = req.query.station
   var type = req.query.format
   var resp
@@ -15,7 +15,9 @@ router.get('/', function(req, res, next) {
 
   if (type=='json'){
     //case json daily
-    var dataurl = 'http://dd.weather.gc.ca/hydrometric/csv/BC/daily/BC_'
+    var dataurl = 'http://dd.weather.gc.ca/hydrometric/csv/BC/hourly/BC_'
+    + station +'_hourly_hydrometric.csv';
+    var dailyUrl ='http://dd.weather.gc.ca/hydrometric/csv/BC/daily/BC_'
     + station +'_daily_hydrometric.csv';
     console.log(dataurl);
 
@@ -37,18 +39,5 @@ router.get('/', function(req, res, next) {
   }
 
 });
-
-function getCSV(url, callback){
-  var dataset = [];
-  csv()
-    .fromStream(request.get(url))
-    .on('json',(json)=>{
-        // csvRow is an array
-        dataset.push(json);
-    })
-    .on('done',(error)=>{
-      callback(dataset);
-    })
-}
 
 module.exports = router;

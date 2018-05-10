@@ -9,7 +9,7 @@ var rtData = {
  };
 
 function buildDailyUrl(station, format='json'){
-    var router = "./daily"
+    var router = "./realtime"
     var url = router + "?station=" + station + "&format=" + format;
     return url
 }
