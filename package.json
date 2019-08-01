@@ -16,7 +16,7 @@
     "http-errors": "~1.6.2",
     "morgan": "~1.9.0",
     "request": "^2.85.0",
-    "sqlite": "^2.9.1"
+    "sqlite": "^3.0.3"
   },
   "devDependencies": {
     "nodemon": "^1.17.3"
