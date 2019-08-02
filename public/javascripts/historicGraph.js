@@ -115,7 +115,7 @@ function drawHistoricGraph(){
                         var format = id === 'data1' ? d3.format(',') : d3.format('.1f');
                         return format(value) + ' m3/s';
                     }
-        //            value: d3.format(',') // apply this format to both y and y2
+                    //value: d3.format(',') // apply this format to both y and y2
                 }
             }
             // ,
