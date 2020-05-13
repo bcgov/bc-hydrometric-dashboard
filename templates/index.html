@@ -1,0 +1,9 @@
+{% extends 'layout.html' %}
+{% block title %} {{title}} {% endblock %}
+{% block head %}
+ {{ super() }}
+{% endblock %}
+{% block body %}
+ <div id='map'></div>
+ <div id='dailyGraph' class='graph'></div>
+{% endblock %}
