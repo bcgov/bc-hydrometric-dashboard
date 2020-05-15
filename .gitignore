@@ -140,3 +140,6 @@ cython_debug/
 .vscode/launch.json
 
 #python cache 
+
+# sqlite3 database
+.sqlite3
