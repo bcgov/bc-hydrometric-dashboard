@@ -39,15 +39,40 @@ class weeklyflow(Resource):
         r = self.hydro.get_flow(station_id,start,stop,result_type='history')
         return r
 class historicflow(Resource):
+    def __init__(self):
+        self.hydro = CanHydrometrics(os.environ['SCRAP2_API_KEY'])
     def get(self,station_id):
-        return f'get {station_id}'
+        stop = datetime.today().strftime('%Y-%m-%d')
+        start = datetime.today() - timedelta(days=7)
+        start = start.strftime('%Y-%m-%d')
+        r = self.hydro.get_historic(station_id,start,stop,'FLOW')
+        return r
     def put(self,station_id):
-        return f'put {station_id}'
-
-
+        stop = datetime.today().strftime('%Y-%m-%d')
+        start = datetime.today() - timedelta(days=7)
+        start = start.strftime('%Y-%m-%d')
+        r = self.hydro.get_historic(station_id,start,stop,'FLOW')
+        return r
+class historiclevel(Resource):
+    def __init__(self):
+        self.hydro = CanHydrometrics(os.environ['SCRAP2_API_KEY'])
+    def get(self,station_id):
+        stop = datetime.today().strftime('%Y-%m-%d')
+        start = datetime.today() - timedelta(days=7)
+        start = start.strftime('%Y-%m-%d')
+        r = self.hydro.get_historic(station_id,start,stop,'LEVEL')
+        return r
+    def put(self,station_id):
+        stop = datetime.today().strftime('%Y-%m-%d')
+        start = datetime.today() - timedelta(days=7)
+        start = start.strftime('%Y-%m-%d')
+        r = self.hydro.get_historic(station_id,start,stop,'LEVEL')
+        return r
 
 api.add_resource(dailyflow,'/dailyflow/<string:station_id>')
 api.add_resource(weeklyflow,'/weeklyflow/<string:station_id>')
+api.add_resource(historicflow,'/historicflow/<string:station_id>')
+api.add_resource(historiclevel,'/historiclevel/<string:station_id>')
 
 @app.route("/map")
 def index_router():

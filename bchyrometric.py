@@ -118,8 +118,7 @@ if __name__ == '__main__':
     #get_hourly_data_from_csv('08NH005')
     hydro = CanHydrometrics(os.environ['SCRAP2_API_KEY'])
     # r = hydro.get_level('08NE074','2020-05-12','2020-05-12',result_type='history')
-    r = hydro.get_historic('08NE074','2020-05-07','2020-05-14','LEVEL')
-    print (r)
+    r = hydro.get_historic('08NE074','2020-05-07','2020-05-21','LEVEL')
 
 
     
